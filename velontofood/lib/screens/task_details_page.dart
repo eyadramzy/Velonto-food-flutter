@@ -51,7 +51,6 @@ class ItemInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Flexible(
       child: Container(
-        color: Colors.red,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
