@@ -59,10 +59,16 @@ class _TaskInfoPageState extends State<TaskInfoPage> {
                   elevation: 0,
                   child: Row(
                     children: [
-                      Image.asset("assets/image/img.png"),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(4.0),
+                        child: Image.asset(
+                          ("assets/image/img.jpg"),
+                          width: 100.0,
+                        ),
+                      ),
                       Padding(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 8.0, vertical: 10),
+                            horizontal: 8.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: const [
@@ -78,7 +84,7 @@ class _TaskInfoPageState extends State<TaskInfoPage> {
                             SizedBox(
                               height: 3,
                             ),
-                            Text("199.99 \$" ,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
+                            Text("\$199.99" ,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
                           ],
                         ),
                       )
@@ -96,8 +102,8 @@ class _TaskInfoPageState extends State<TaskInfoPage> {
                 child: Row(
                   children: [
                     const Text("Total:", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
-                    SizedBox(width: 5,),
-                    const Text("2256.9 \$",style: TextStyle(fontWeight: FontWeight.bold , fontSize: 15)),
+                    const SizedBox(width: 5,),
+                    const Text("\$2256.9",style: TextStyle(fontWeight: FontWeight.bold , fontSize: 15)),
                     const Spacer(),
                     ElevatedButton(
                       onPressed: () {},
@@ -131,11 +137,11 @@ class ItemInfo extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(title),
+          Text(title , style: const TextStyle(fontSize: 12 , fontWeight: FontWeight.w500),),
           const SizedBox(
             height: 5,
           ),
-          Text(details, textAlign: TextAlign.center),
+          Text(details, style: const TextStyle(fontSize: 10 , fontWeight: FontWeight.w300), textAlign: TextAlign.center),
         ],
       ),
     );

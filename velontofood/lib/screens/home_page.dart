@@ -22,17 +22,17 @@ class _HomePageState extends State<HomePage>
   void initState() {
     _tabController = TabController(length: 3, vsync: this);
 
-    newTaskList.add(TaskModel(title: "#00350", time: "As soon as", price: "99.90 \$", status: 0));
-    newTaskList.add(TaskModel(title: "#00350", time: "Today ,10:45", price: "99.90 \$", status: 0));
-    newTaskList.add(TaskModel(title: "#00355", time: "Today ,12:45", price: "250.90 \$", status: 0));
-    newTaskList.add(TaskModel(title: "#00355", time: "Today ,2:00", price: "20.20 \$", status: 0));
+    newTaskList.add(TaskModel(title: "#00350", time: "As soon as", price: "\$99.90 ", status: 0));
+    newTaskList.add(TaskModel(title: "#00350", time: "Today ,10:45", price: "\$99.90 ", status: 0));
+    newTaskList.add(TaskModel(title: "#00355", time: "Today ,12:45", price: "\$250.90 ", status: 0));
+    newTaskList.add(TaskModel(title: "#00355", time: "Today ,2:00", price: " \$20.20", status: 0));
 
-    preparingTaskList.add(TaskModel(title: "#00450", time: "Today ,11:45", price: "99.90 \$", status: 1));
-    preparingTaskList.add(TaskModel(title: "#00250", time: "Today ,10:45", price: "99.90 \$", status: 1));
+    preparingTaskList.add(TaskModel(title: "#00450", time: "Today ,11:45", price: "\$99.90 ", status: 1));
+    preparingTaskList.add(TaskModel(title: "#00250", time: "Today ,10:45", price: "\$99.90 ", status: 1));
 
-    deliveryTaskList.add(TaskModel(title: "#00360", time: "Sat ,10:45", price: "99.90 \$", status: 2));
-    deliveryTaskList.add(TaskModel(title: "#00445", time: "Sun ,12:45", price: "250.90 \$", status: 2));
-    deliveryTaskList.add(TaskModel(title: "#00685", time: "Sat ,2:00", price: "20.20 \$", status: 2));
+    deliveryTaskList.add(TaskModel(title: "#00360", time: "Sat ,10:45", price: "\$99.90 ", status: 2));
+    deliveryTaskList.add(TaskModel(title: "#00445", time: "Sun ,12:45", price: "\$250.90 ", status: 2));
+    deliveryTaskList.add(TaskModel(title: "#00685", time: "Sat ,2:00", price: "\$20.20 ", status: 2));
     super.initState();
 
 
@@ -48,7 +48,15 @@ class _HomePageState extends State<HomePage>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text("Task List", style: TextStyle(fontSize: 25,color: Colors.black , fontWeight: FontWeight.w900)),
+              Row(
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  const Text("Task List", style: TextStyle(fontSize: 25,color: Colors.black , fontWeight: FontWeight.w900)),
+                  const Spacer(),
+                  const Icon(Icons.sort, color: Colors.black,size: 30,),
+                ],
+              ),
+
               const SizedBox(height: 20,),
               Container(
                 height: 45,
