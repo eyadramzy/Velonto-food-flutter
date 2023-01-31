@@ -25,14 +25,92 @@ class _TaskInfoPageState extends State<TaskInfoPage> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                ItemInfo(title: "Preparing time", details: "00h : 25m : 30s"),
-                ItemInfo(title: "Address", details: "Gaza, Al Remal Building"),
-                ItemInfo(title: "Austin Paul", details: "+00970 593529643"),
-              ],
-            )
+            Card(
+              elevation: 1,
+              shadowColor: Colors.black26,
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: IntrinsicHeight(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const ItemInfo(
+                          title: "Preparing time", details: "00h : 25m : 30s"),
+                      const SizedBox(
+                        width: 2,
+                      ),
+                      Container(width: 1, color: Colors.black26),
+                      const ItemInfo(
+                          title: "Address", details: "Gaza, Al Remal Building"),
+                      Container(width: 1, color: Colors.black26),
+                      const ItemInfo(
+                          title: "Austin Paul", details: "+00970 593529643"),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+                child: ListView.builder(
+              itemCount: 15,
+              itemBuilder: (context, index) {
+                return Card(
+                  elevation: 0,
+                  child: Row(
+                    children: [
+                      Image.asset("assets/image/img.png"),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8.0, vertical: 10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text("Rice with vegetables" , style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
+                            SizedBox(
+                              height: 3,
+                            ),
+                            Text("Notes: without vegetables"),
+                            SizedBox(
+                              height: 3,
+                            ),
+                            Text("x5"),
+                            SizedBox(
+                              height: 3,
+                            ),
+                            Text("199.99 \$" ,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              },
+            )),
+            Card(
+              elevation: 1,
+              shadowColor: Colors.black26,
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0 , vertical: 2),
+                child: Row(
+                  children: [
+                    const Text("Total:", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
+                    SizedBox(width: 5,),
+                    const Text("2256.9 \$",style: TextStyle(fontWeight: FontWeight.bold , fontSize: 15)),
+                    const Spacer(),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: const ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll<Color>(AppColors.orangeColor),
+                      ),
+                      child: const Text("Accept order"),
+                    )
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -50,14 +128,15 @@ class ItemInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Flexible(
-      child: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(title),
-            Text(details),
-          ],
-        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(title),
+          const SizedBox(
+            height: 5,
+          ),
+          Text(details, textAlign: TextAlign.center),
+        ],
       ),
     );
   }

@@ -145,6 +145,7 @@ class TaskItem extends StatelessWidget {
                     Row(
                       children:  [
                         const Icon(Icons.access_time , size: 12),
+                        const SizedBox(width:5 ,),
                         Text(taskModel.time , style: const TextStyle(fontSize: 12,color: Colors.black87)),
                       ],
                     ),
