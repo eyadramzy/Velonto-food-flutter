@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage>
                     borderRadius: BorderRadius.circular(
                       10.0,
                     ),
-                    color: AppColors.primaryColor,
+                    color: primaryColor,
                   ),
                   labelColor: Colors.white,
                   unselectedLabelColor: Colors.black,

@@ -15,11 +15,11 @@ class _TaskInfoPageState extends State<TaskInfoPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Task #00349",
-            style: TextStyle(color: AppColors.primaryColor)),
+            style: TextStyle(color: primaryColor)),
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.transparent,
-        iconTheme: const IconThemeData(color: AppColors.primaryColor),
+        iconTheme: const IconThemeData(color: primaryColor),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -109,7 +109,7 @@ class _TaskInfoPageState extends State<TaskInfoPage> {
                       onPressed: () {},
                       style: const ButtonStyle(
                         backgroundColor:
-                            MaterialStatePropertyAll<Color>(AppColors.orangeColor),
+                            MaterialStatePropertyAll<Color>(orangeColor),
                       ),
                       child: const Text("Accept order"),
                     )

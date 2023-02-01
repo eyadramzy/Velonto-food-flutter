@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:velontofood/main_common.dart';
+import 'package:velontofood/product/product_page.dart';
 import 'package:velontofood/screens/home_page.dart';
 import 'package:velontofood/screens/task_details_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  mainCommon();
 }
 
 class MyApp extends StatelessWidget {
@@ -29,6 +31,7 @@ class MyApp extends StatelessWidget {
           routes: {
             HomePage.id :  (context) => const HomePage(),
             TaskInfoPage.id :  (context) => const TaskInfoPage(),
+            ProductPage.id :  (context) => const ProductPage(),
           },
           initialRoute: HomePage.id,
         ) );
