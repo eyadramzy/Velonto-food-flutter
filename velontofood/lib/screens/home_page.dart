@@ -113,13 +113,18 @@ class TasksListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-        itemCount: data.length,
-        itemBuilder: (context, index) {
-          TaskModel taskModel = data[index];
-          return TaskItem(taskModel: taskModel);
-        });
+    return RefreshIndicator(
+      onRefresh: () async {
+
+      },
+      child: ListView.builder(
+        padding: const EdgeInsets.symmetric(vertical: 20),
+          itemCount: data.length,
+          itemBuilder: (context, index) {
+            TaskModel taskModel = data[index];
+            return TaskItem(taskModel: taskModel);
+          }),
+    );
   }
 }
 

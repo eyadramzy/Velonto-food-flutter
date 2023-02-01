@@ -52,47 +52,52 @@ class _TaskInfoPageState extends State<TaskInfoPage> {
               ),
             ),
             Expanded(
-                child: ListView.builder(
+                child: RefreshIndicator(
+                  onRefresh: () async {
+
+                  },
+                  child: ListView.builder(
               itemCount: 15,
               itemBuilder: (context, index) {
-                return Card(
-                  elevation: 0,
-                  child: Row(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(4.0),
-                        child: Image.asset(
-                          ("assets/image/img.jpg"),
-                          width: 100.0,
+                  return Card(
+                    elevation: 0,
+                    child: Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(4.0),
+                          child: Image.asset(
+                            ("assets/image/img.jpg"),
+                            width: 100.0,
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text("Rice with vegetables" , style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
-                            SizedBox(
-                              height: 3,
-                            ),
-                            Text("Notes: without vegetables"),
-                            SizedBox(
-                              height: 3,
-                            ),
-                            Text("x5"),
-                            SizedBox(
-                              height: 3,
-                            ),
-                            Text("\$199.99" ,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                );
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Text("Rice with vegetables" , style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
+                              SizedBox(
+                                height: 3,
+                              ),
+                              Text("Notes: without vegetables"),
+                              SizedBox(
+                                height: 3,
+                              ),
+                              Text("x5"),
+                              SizedBox(
+                                height: 3,
+                              ),
+                              Text("\$199.99" ,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  );
               },
-            )),
+            ),
+                )),
             Card(
               elevation: 1,
               shadowColor: Colors.black26,
